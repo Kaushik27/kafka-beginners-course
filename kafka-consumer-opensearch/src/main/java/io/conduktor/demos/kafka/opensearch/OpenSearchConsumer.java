@@ -1,4 +1,4 @@
-package opensearch;
+package io.conduktor.demos.kafka.opensearch;
 
 import com.google.gson.JsonParser;
 import org.apache.http.HttpHost;
@@ -126,7 +126,7 @@ public class OpenSearchConsumer {
 
         // we need to create the index on OpenSearch if it doesn't exist already
 
-        try(openSearchClient; consumer){
+        try(openSearchClient; consumer) {
 
             boolean indexExists = openSearchClient.indices().exists(new GetIndexRequest("wikimedia"), RequestOptions.DEFAULT);
 
