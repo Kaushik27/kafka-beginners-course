@@ -52,15 +52,15 @@ public class ConsumerDemoAssignSeek {
         int numberOfMessagesReadSoFar = 0;
 
         // poll for new data
-        while(keepOnReading){
+        while (keepOnReading) {
             ConsumerRecords<String, String> records =
                     consumer.poll(Duration.ofMillis(100));
 
-            for (ConsumerRecord<String, String> record : records){
+            for (ConsumerRecord<String, String> record : records) {
                 numberOfMessagesReadSoFar += 1;
                 log.info("Key: " + record.key() + ", Value: " + record.value());
                 log.info("Partition: " + record.partition() + ", Offset:" + record.offset());
-                if (numberOfMessagesReadSoFar >= numberOfMessagesToRead){
+                if (numberOfMessagesReadSoFar >= numberOfMessagesToRead) {
                     keepOnReading = false; // to exit the while loop
                     break; // to exit the for loop
                 }

@@ -22,7 +22,7 @@ public class ConsumerRebalanceListenerImpl implements ConsumerRebalanceListener 
         this.consumer = consumer;
     }
 
-    public void addOffsetToTrack(String topic, int partition, long offset){
+    public void addOffsetToTrack(String topic, int partition, long offset) {
         currentOffsets.put(
                 new TopicPartition(topic, partition),
                 new OffsetAndMetadata(offset + 1, null));

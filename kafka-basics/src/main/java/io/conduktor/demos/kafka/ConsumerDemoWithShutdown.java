@@ -62,7 +62,6 @@ public class ConsumerDemoWithShutdown {
         });
 
 
-
         try {
             // subscribe to a topic
             consumer.subscribe(Arrays.asList(topic));

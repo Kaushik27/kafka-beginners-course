@@ -1,7 +1,11 @@
 package io.conduktor.demos.kafka.advanced;
 
 import org.apache.kafka.clients.CommonClientConfigs;
-import org.apache.kafka.clients.consumer.*;
+import org.apache.kafka.clients.consumer.Consumer;
+import org.apache.kafka.clients.consumer.ConsumerConfig;
+import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.apache.kafka.clients.consumer.ConsumerRecords;
+import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.config.SaslConfigs;
 import org.apache.kafka.common.errors.WakeupException;
 import org.apache.kafka.common.serialization.StringDeserializer;
@@ -16,7 +20,7 @@ import java.util.concurrent.CountDownLatch;
 
 public class ConsumerDemoThreads {
 
-    public static void main(String[] args)  {
+    public static void main(String[] args) {
         ConsumerDemoWorker consumerDemoWorker = new ConsumerDemoWorker();
         new Thread(consumerDemoWorker).start();
         Runtime.getRuntime().addShutdownHook(new Thread(new ConsumerDemoCloser(consumerDemoWorker)));

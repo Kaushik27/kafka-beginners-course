@@ -37,9 +37,9 @@ public class ProducerDemoKeys {
         KafkaProducer<String, String> producer = new KafkaProducer<>(properties);
 
 
-        for (int j=0; j<2; j++){
+        for (int j = 0; j < 2; j++) {
 
-            for (int i=0; i<10; i++){
+            for (int i = 0; i < 10; i++) {
 
                 String topic = "demo_java";
                 String key = "id_" + i;
@@ -70,7 +70,6 @@ public class ProducerDemoKeys {
                 e.printStackTrace();
             }
         }
-
 
 
         // tell the producer to send all data and block until done -- synchronous

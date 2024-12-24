@@ -53,7 +53,7 @@ public class ConsumerDemo {
             ConsumerRecords<String, String> records =
                     consumer.poll(Duration.ofMillis(1000));
 
-            for (ConsumerRecord<String, String> record: records) {
+            for (ConsumerRecord<String, String> record : records) {
                 log.info("Key: " + record.key() + ", Value: " + record.value());
                 log.info("Partition: " + record.partition() + ", Offset: " + record.offset());
             }

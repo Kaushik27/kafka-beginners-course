@@ -66,7 +66,6 @@ public class ConsumerDemoCooperative {
         });
 
 
-
         try {
             // subscribe to a topic
             consumer.subscribe(Arrays.asList(topic));
